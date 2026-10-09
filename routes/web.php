@@ -1,20 +1,13 @@
 <?php
 
+use App\Http\Controllers\PrimerControlador;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    
-    return view('test');
-});
+Route::get('test', [PrimerControlador::class,'index']);
 
-Route::get('/crud', function () {
+Route::get('otro/{post}/{otro}', [PrimerControlador::class, 'otro']);
 
-    $age = 33;
-    $data = ['name' => 'Diego', 'age' => $age];
-    
-    return view('crud/index', $data);
-})->name('crud');
