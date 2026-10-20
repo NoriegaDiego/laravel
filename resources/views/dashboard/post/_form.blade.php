@@ -2,7 +2,7 @@
 
 
 @section('content')
-        <h1>Crear Post</h1>
+        <h1>{{ $post->exists ? 'ACTUALIZAR POST:' : 'CREAR' }} {{ $post->title }}</h1>
 
         <label>Title</label>
         <input class="form-control" type="text" name="title" value="{{ old('title',$post->title) }}">
